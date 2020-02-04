@@ -63,10 +63,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
 
-    - name: Download monolithic libraries to v8.out directory and bundle Windows jar file
+    - name: Download monolithic libraries to v8.out directory
       run: |
         powershell curl -uri https://download.eclipsesource.com/j2v8/v8/libv8_7.4.288_monolith.zip -OutFile libv8_7.4.288_monolith.zip;expand-archive -Path libv8_7.4.288_monolith.zip -DestinationPath v8.out -Force
 
+    - name: Bundle Windows jar file
+      run: |
         # start j2v8 build
         python build.py -t win32 -a x64 --docker j2v8cmake j2v8jni j2v8cpp j2v8optimize j2v8java
         python build.py -t win32 -a x86 --docker j2v8cmake j2v8jni j2v8cpp j2v8optimize j2v8java
