@@ -16,7 +16,7 @@ jobs:
         curl -O https://download.eclipsesource.com/j2v8/v8/libv8_7.4.288_monolith.zip
         mkdir -p v8.out
         unzip libv8_7.4.288_monolith.zip -d v8.out
-        sudo apt-get install gcc-multilib
+        apt-get install gcc-multilib g++-multilib
 
         # start j2v8 build
         python build.py -t linux -a x64 --docker j2v8cmake j2v8jni j2v8cpp j2v8optimize j2v8java
