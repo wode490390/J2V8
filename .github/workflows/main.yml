@@ -68,7 +68,6 @@ jobs:
       run: |
         j2v8-cli.cmd
         py -2 nodejs.py git clone
-        py -2 nodejs.py diff apply
         py -2 build.py -t win32 -a x64 nodejs j2v8cmake j2v8jni j2v8cpp j2v8optimize j2v8java
         py -2 build.py -t win32 -a x86 nodejs j2v8cmake j2v8jni j2v8cpp j2v8optimize j2v8java
 
