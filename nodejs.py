@@ -74,7 +74,7 @@ def git_clone(args):
     if (not os.path.exists("node")):
         print "Cloning Node.js version: " + settings.NODE_VERSION
         # NOTE: autocrlf=false is very important for linux based cross-compiles of Node.js to work on a windows docker host
-        utils.execute("git clone https://github.com/nodejs/node --config core.autocrlf=false --depth 1 --branch v" + settings.NODE_VERSION)
+        utils.execute("git clone https://github.com/wode490390/node --config core.autocrlf=false --depth 1 --branch j2v8")
     else:
         print "Skipped git-clone: Node.js source-code is already cloned & checked out at the './node' directory."
 
